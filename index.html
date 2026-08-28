@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Time Processing System - Interactive Help</title>
+<style>
+ body {margin:0;font-family: "Trebuchet MS", Helvetica, sans-serif;}
+ header {background:#003366;color:white;padding:20px;text-align:center;}
+ #sidebar{position:fixed;top:0;left:0;width:260px;height:100%;background:#f4f4f4;padding:20px;border-right:1px solid #ccc;overflow-y:auto;}
+ #sidebar a{display:block;margin:8px 0;padding:10px;background:white;border:1px solid #cfd8e3;border-radius:5px;color:#003366;font-weight:bold;text-decoration:none;}
+ #sidebar a:hover{background:#e6f2ff;}
+ #content{margin-left:280px;padding:40px;}
+ section{display:none;}
+ section.active{display:block;}
+ img{width:50%;border-radius:6px;margin-top:16px;}
+ ol{margin-top:15px;}
+ .icon {width:38px !important; height:38px !important; margin:0; margin-right:8px}
+ #searchNav {padding: 8px 12px; width: 90%; font-size:1.1em}
+ .title-section {display:flex;flex-direction:row; align-items: center}
+ a.skip-link { position: absolute; top: -40px; left: 0; background: black; color: white; padding: 10px; z-index: 999; }
+ a.skip-link:focus { top: 0; }
+ p {width: 80%; text-align:justify; margin-bottom:24px; }
+ li p {width: 80%; text-align:justify; margin:0; margin-top:6px; }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+    #sidebar {
+        position:relative;
+        width:100%;
+        height:auto;
+        border-right:none;
+        border-bottom:1px solid #ccc;
+    }
+    #content {
+        margin-left:0;
+        padding:20px;
+    }
+    p, li p {
+        width: 90% !important;
+    }
+    img {
+        width: 90% !important;
+    }
+    .title-section {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+	
+	 .title-section {display:flex;flex-direction:row; align-items: center}
+	  img{width:80%;border-radius:6px;margin-top:16px;}
+ }
+</style>
+<script>
+function showSection(id){
+ let sections=document.getElementsByTagName('section');
+ for(let i=0;i<sections.length;i++){sections[i].classList.remove('active');}
+ document.getElementById(id).classList.add('active');
+}
+function filterNavigation(){
+ let input=document.getElementById('searchNav').value.toLowerCase();
+ let links=document.querySelectorAll('#sidebar a');
+ links.forEach(link=>{link.style.display=link.innerText.toLowerCase().includes(input)?'block':'none';});
+}
+</script>
+</head>
+<body>
+<a onclick="showSection('overview')" href="#overview" class="skip-link">Skip to main content</a>
+<header><h1>Time Processing System Help</h1></header>
+<div id="sidebar">
+ <h2>Pages</h2>
+ <input type="text" id="searchNav" placeholder="Find page by title" onkeyup="filterNavigation()">
+ <a href="#" onclick="showSection('overview')">Overview</a>
+ <a href="#" onclick="showSection('updateEmployee')">Employee Profile</a>
+ <a href="#" onclick="showSection('addTimesheet')">Enter Timesheet</a>
+ <a href="#" onclick="showSection('approveTimesheet')">Approve Timesheet</a>
+ <a href="#" onclick="showSection('submitTimesheet')">Submit Timesheet</a>
+ <a href="#" onclick="showSection('faq')">FAQ</a>
+</div>
+<div id="content">
+
+<!-- FULL CONTENT FROM USER BELOW -->
+
+<section id='overview' class='active'>
+ <div class="title-section">
+ <img class="icon" alt="Info icon for overview page"
+ src="https://static.vecteezy.com/system/resources/previews/005/747/906/original/info-icon-template-information-icon-colorful-free-vector.jpg" />
+ <h2>Overview of Time Processing System (TPS)</h2>
+ </div>
+ <p>The Employee Time Processing System (TPS) is an enterprise web application used to record, review, and approve employee working hours across the organization. TPS supports daily and weekly time entry, project-based hour tracking, and automated validation to ensure accurate reporting of time worked. The system maintains compliance with labor policies, overtime rules, and organizational pay structures.</p>
+
+  <p style="display:inline;width:50% !important; overflow:wrap">TPS is used by three primary groups of users, each with distinct responsibilities.
+    <ul>
+      <li><p><strong>Employee:</strong> Employees enter their hours, breaks, tasks, and project assignments for each day in the pay period.</p></li>
+      <li><p><strong>Manager:</strong> Managers review submitted timesheets, confirm accuracy, request corrections when needed, and approve entries for payroll processing.</p></li>
+      <li><p><strong>Payroll:</strong> Payroll staff finalize approved timesheets, reconcile recorded hours with pay rules, and generate audit-ready records that support tax calculations, compliance reporting, and organizational payroll cycles.</p></li>
+    </ul>
+  </p>
+
+  <p>This documentation page provides step-by-step instructions, role-based guidance, and visual examples to help users complete common TPS tasks. Each section includes clear actions, accessible language, and descriptive imagery to support all users, including those relying on assistive technologies. The guide is designed to help employees, managers, and payroll personnel perform their responsibilities confidently and correctly.</p>
+
+ <img src='https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600' alt='Payroll team reviewing documentation and system compliance requirements in a meeting room'>
+ <p>Payroll team reviewing TPS system requirements and validating compliance workflows for accurate processing.</p>
+
+</section>
+
+<section id='updateEmployee'>
+<div class="title-section">
+    <img  class="icon" alt="user icon for employee profile page"
+    src ="https://static.vecteezy.com/system/resources/previews/018/765/138/large_2x/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg" />
+    <h2>Update Employee Profile</h2>
+</div>
+<p>Managers or payroll staff can update employee information as needed.</p>
+<ol>
+ <li>Select "Employees" from the main dashboard.</li>
+ <li>Search for the employee.</li>
+ <li>Select "My Profile".</li>
+ <li>Update fields (Job Mobile Number, Contact Email, Address, Payment Mode).</li>
+ <li>Changes are saved automatically on entry.</li>
+</ol>
+<img src='https://www.zoho.com/payroll/help/us/employee-portal/my-profile/profile-details.png' alt='Employee profile screen showing personal details, contact information, and masked sensitive fields'>
+<p>Employee profile page for Larry Coleman displaying personal and payment details with sensitive information masked by default.</p>
+</section>
+
+<section id='addTimesheet'>
+<div class="title-section">
+ <img class="icon" alt="Calendar icon for enter timesheet page" src="https://img.icons8.com/?size=1200&id=3a1seLBPtnbH&format=jpg" />
+ <h2>Enter Timesheet</h2>
+</div>
+<p>Employees enter hours worked for each day in the pay period.</p>
+<ol>
+ <li>Open "My Timesheets".</li>
+ <li>Select "Create New Timesheet".</li>
+ <li>Enter Project, Task and hours for each day.</li>
+ <li>Select Add Line item to add additional lines.</li>
+ <li>Select "Save" to complete timesheet entry.</li>
+</ol>
+<img src='https://www.actitime.com/wp-content/uploads/2022/10/aT-OrangeScrum-Interface.jpg' alt='Weekly timesheet interface showing project names, task entries, and daily recorded hours'>
+<p>Weekly timesheet entry for John Doe displaying assigned projects, tasks, and recorded hours in the Time Processing System.</p>
+</section>
+
+<section id='approveTimesheet'>
+<div class="title-section">
+    <img class="icon" alt="Check icon for approve timesheet page" src="https://www.svgrepo.com/show/375977/check-circle-filled.svg" />
+    <h2>Approve Timesheet</h2>
+</div>
+<p>Managers must review and approve submitted timesheets.</p>
+<ol>
+ <li>Open the "Pending Approvals" queue.</li>
+ <li>Review hours, overtime, and project codes.</li>
+ <li>Check for compliance issues.</li>
+ <li>Select "Approve" or "Reject".</li>
+ <li>Add optional manager comments.</li>
+</ol>
+<img alt='Timesheet approval screen displaying pay period details, daily hours, approved and rejected entries, and manager comments'
+ src='https://cdn.prod.website-files.com/64148069036e35d5954d1323/64148069036e35d2ca4d1955_Online%20timesheet%20approval%20app.png'>
+<p>Timesheet for Vincent Vega showing approved and rejected hours. Rejected entries require correction before managers can complete the approval.</p>
+</section>
+
+<section id='submitTimesheet'>
+<div class="title-section">
+    <img class="icon" alt="Upload icon for submit timesheet page" src="https://th.bing.com/th/id/R.c0ff52a7d340c6ba7e1aa3f89fe9039c?rik=b%2b5pij49oHpoLQ&pid=ImgRaw&r=0" />
+    <h2>Submit Timesheet</h2>
+</div>
+<p>Employees submit timesheets after entering required time.</p>
+<ol>
+ <li>Open saved timesheet.</li>
+ <li>Verify all entries.</li>
+ <li>Ensure no validation errors appear.</li>
+ <li>Select "Submit Timesheet".</li>
+ <li>Wait for submission confirmation message.</li>
+</ol>
+<img alt='Payroll submission screen displaying daily hours, estimated gross pay, taxes, and net pay summary'
+ src='https://hroptions.zendesk.com/hc/article_attachments/360026650574/submit_timesheet_pabe.png'>
+<p>The payroll submission screen allows employees to review daily hours, confirm estimated taxes and projected net pay, and make any required corrections before final submission to payroll.</p>
+</section>
+
+<section id='faq'>
+ <div class="title-section">
+ <img class="icon" alt="Question mark icon for FAQ page" src="https://tse4.mm.bing.net/th/id/OIP.WvyydCnxBHZef2quhI_YvAHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" />
+ <h2>Frequently Asked Questions (FAQ)</h2>
+ </div>
+ <ul>
+    <li><strong>Why can't I submit?</strong><br/> Ensure all mandatory fields are completed and the timesheet is within the submission window.</li>
+    <li><strong>Why was my timesheet rejected?</strong><br/> Managers may reject entries for incorrect hours or missing project codes.</li>
+    <li><strong>How do I correct errors?</strong><br/> Open the rejected timesheet, fix highlighted issues, and resubmit.</li>
+ </ul>
+
+ <img src='https://www.pngmart.com/files/10/FAQ-PNG-Picture.png' alt='Three overlapping speech bubbles illustrating common questions raised by employees and managers'>
+ <p>Common questions raised by employees and managers when entering, reviewing, or approving time in the TPS.</p>
+</section>
+
+</div>
+</body>
+</html>
