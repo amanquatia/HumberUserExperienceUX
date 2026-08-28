@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Time Processing System - Interactive Help</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
  body {margin:0;font-family: "Trebuchet MS", Helvetica, sans-serif;}
- header {background:#003366;color:white;padding:20px;text-align:center;}
+ header {background:#003366;color:white;padding:20px;text-align:center; margin-left:280px;}
  #sidebar{position:fixed;top:0;left:0;width:260px;height:100%;background:#f4f4f4;padding:20px;border-right:1px solid #ccc;overflow-y:auto;}
  #sidebar a{display:block;margin:8px 0;padding:10px;background:white;border:1px solid #cfd8e3;border-radius:5px;color:#003366;font-weight:bold;text-decoration:none;}
  #sidebar a:hover{background:#e6f2ff;}
@@ -26,11 +27,13 @@
  @media (max-width: 768px) {
     #sidebar {
         position:relative;
-        width:100%;
+        width:90%;
         height:auto;
         border-right:none;
         border-bottom:1px solid #ccc;
     }
+	header {margin-left:0;}
+	#searchNav {width: 92%;}
     #content {
         margin-left:0;
         padding:20px;
