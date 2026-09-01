@@ -68,10 +68,10 @@ function filterNavigation(){
 </head>
 <body>
 <a onclick="showSection('overview')" href="#overview" class="skip-link">Skip to main content</a>
-<header><h1>Time Processing System Help</h1></header>
+<header><h1>Time Processing System (TPS) Documentation</h1></header>
 <div id="sidebar">
- <h2>Pages</h2>
- <input type="text" id="searchNav" placeholder="Find page by title" onkeyup="filterNavigation()">
+ <h2>Menu</h2>
+ <input type="text" id="searchNav" placeholder="Find by title" onkeyup="filterNavigation()">
  <a href="#" onclick="showSection('overview')">Overview</a>
  <a href="#" onclick="showSection('updateEmployee')">Employee Profile</a>
  <a href="#" onclick="showSection('addTimesheet')">Enter Timesheet</a>
@@ -112,13 +112,13 @@ function filterNavigation(){
     src ="https://static.vecteezy.com/system/resources/previews/018/765/138/large_2x/user-profile-icon-in-flat-style-member-avatar-illustration-on-isolated-background-human-permission-sign-business-concept-vector.jpg" />
     <h2>Update Employee Profile</h2>
 </div>
-<p>Managers or payroll staff can update employee information as needed.</p>
+<p>Employee profile information can be updated by managers, employees, and payroll staff as needed to maintain accurate records.</p>
 <ol>
- <li>Select "Employees" from the main dashboard.</li>
+ <li>Select "Employees" from TPS main dashboard</li>
  <li>Search for the employee.</li>
  <li>Select "My Profile".</li>
  <li>Update fields (Job Mobile Number, Contact Email, Address, Payment Mode).</li>
- <li>Changes are saved automatically on entry.</li>
+ <li>Changes are saved automatically when entered.</li>
 </ol>
 <img src='https://www.zoho.com/payroll/help/us/employee-portal/my-profile/profile-details.png' alt='Employee profile screen showing personal details, contact information, and masked sensitive fields'>
 <p>Employee profile page for Larry Coleman displaying personal and payment details with sensitive information masked by default.</p>
@@ -131,10 +131,11 @@ function filterNavigation(){
 </div>
 <p>Employees enter hours worked for each day in the pay period.</p>
 <ol>
- <li>Open "My Timesheets".</li>
+ <li>Open "My Timesheets" from TPS main dashboard</li>
  <li>Select "Create New Timesheet".</li>
+ <li>Select the appropriate date range from the "Pay Periods" dropdown menu.</li>
  <li>Enter Project, Task and hours for each day.</li>
- <li>Select Add Line item to add additional lines.</li>
+ <li>Select "Add Line item" to add additional lines.</li>
  <li>Select "Save" to complete timesheet entry.</li>
 </ol>
 <img src='https://www.actitime.com/wp-content/uploads/2022/10/aT-OrangeScrum-Interface.jpg' alt='Weekly timesheet interface showing project names, task entries, and daily recorded hours'>
@@ -148,11 +149,12 @@ function filterNavigation(){
 </div>
 <p>Managers must review and approve submitted timesheets.</p>
 <ol>
+ <li>Select "All Timesheets" from TPS main dashboard</li>
  <li>Open the "Pending Approvals" queue.</li>
  <li>Review hours, overtime, and project codes.</li>
  <li>Check for compliance issues.</li>
- <li>Select "Approve" or "Reject".</li>
  <li>Add optional manager comments.</li>
+ <li>Select "Approve" or "Reject".</li>
 </ol>
 <img alt='Timesheet approval screen displaying pay period details, daily hours, approved and rejected entries, and manager comments'
  src='https://cdn.prod.website-files.com/64148069036e35d5954d1323/64148069036e35d2ca4d1955_Online%20timesheet%20approval%20app.png'>
@@ -164,9 +166,11 @@ function filterNavigation(){
     <img class="icon" alt="Upload icon for submit timesheet page" src="https://th.bing.com/th/id/R.c0ff52a7d340c6ba7e1aa3f89fe9039c?rik=b%2b5pij49oHpoLQ&pid=ImgRaw&r=0" />
     <h2>Submit Timesheet</h2>
 </div>
-<p>Employees submit timesheets after entering required time.</p>
+<p>Employees are required to submit approved timesheets for payroll processing.</p>
 <ol>
- <li>Open saved timesheet.</li>
+ 
+ <li>Select "My Timesheets" from TPS main dashboard</li>
+ <li>Select "Saved Timesheet".</li>
  <li>Verify all entries.</li>
  <li>Ensure no validation errors appear.</li>
  <li>Select "Submit Timesheet".</li>
