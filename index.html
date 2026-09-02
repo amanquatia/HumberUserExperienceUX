@@ -4,55 +4,147 @@
 <meta charset="UTF-8">
 <title>Time Processing System - Interactive Help</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
- body {margin:0;font-family: "Trebuchet MS", Helvetica, sans-serif;}
- header {background:#003366;color:white;padding:20px;text-align:center; margin-left:280px;}
- #sidebar{position:fixed;top:0;left:0;width:260px;height:100%;background:#f4f4f4;padding:20px;border-right:1px solid #ccc;overflow-y:auto;}
- #sidebar a{display:block;margin:8px 0;padding:10px;background:white;border:1px solid #cfd8e3;border-radius:5px;color:#003366;font-weight:bold;text-decoration:none;}
- #sidebar a:hover{background:#e6f2ff;}
- #content{margin-left:280px;padding:40px;}
- section{display:none;}
- section.active{display:block;}
- img{width:50%;border-radius:6px;margin-top:16px;}
- ol{margin-top:15px;}
- .icon {width:38px !important; height:38px !important; margin:0; margin-right:8px}
- #searchNav {padding: 8px 12px; width: 90%; font-size:1.1em}
- .title-section {display:flex;flex-direction:row; align-items: center}
- a.skip-link { position: absolute; top: -40px; left: 0; background: black; color: white; padding: 10px; z-index: 999; }
- a.skip-link:focus { top: 0; }
- p {width: 80%; text-align:justify; margin-bottom:24px; }
- li p {width: 80%; text-align:justify; margin:0; margin-top:6px; }
 
- /* Responsive Design */
- @media (max-width: 768px) {
+<style>
+    body {
+        margin: 0;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+    }
+
+    header {
+        background: #003366;
+        color: white;
+        padding: 20px;
+        text-align: center;
+		margin:0 !important;
+        margin-left: 280px;
+		
+    }
+
+    /* Sidebar */
     #sidebar {
-        position:relative;
-        width:90%;
-        height:auto;
-        border-right:none;
-        border-bottom:1px solid #ccc;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 260px;
+        height: 100%;
+        background: #f4f4f4;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+        overflow-y: auto;
     }
-	header {margin-left:0;}
-	#searchNav {width: 92%;}
+
+    #sidebar a {
+        display: block;
+        margin: 8px 0;
+        padding: 10px;
+        background: white;
+        border: 1px solid #cfd8e3;
+        border-radius: 5px;
+        color: #003366;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    #sidebar a:hover {
+        background: #e6f2ff;
+    }
+
+    #searchNav {
+        padding: 8px 12px;
+        width: 90%;
+        font-size: 1.1em;
+    }
+
+    /* Main content */
     #content {
-        margin-left:0;
-        padding:20px;
+        margin-left: 280px;
+        padding: 40px;
+        max-width: 900px;
     }
-    p, li p {
-        width: 90% !important;
+
+    section {
+        display: none;
     }
+    section.active {
+        display: block;
+    }
+
+    /* Text formatting */
+    p,
+    li p {
+        width: 100%;
+        text-align: justify;
+        margin-bottom: 24px;
+    }
+
+    /* Image formatting */
     img {
-        width: 90% !important;
+        width: 100%;
+        height: auto;
+        max-width: 700px;
+        border-radius: 6px;
+        margin-top: 16px;
     }
-    .title-section {
-        flex-direction:column;
-        align-items:flex-start;
-    }
+
+
+	.icon {width:38px !important; height:38px !important; margin:0; margin-right:8px}
 	
-	 .title-section {display:flex;flex-direction:row; align-items: center}
-	  img{width:80%;border-radius:6px;margin-top:16px;}
- }
+    .title-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    /* Skip link */
+    a.skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: black;
+        color: white;
+        padding: 10px;
+        z-index: 999;
+    }
+    a.skip-link:focus {
+        top: 0;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 900px) {
+        #sidebar {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-right: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        header {
+            margin-left: 0;
+			width:100%;
+        }
+
+        #content {
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        img {
+            width: 100% !important;
+            height: auto;
+            max-width: none;
+        }
+
+        .title-section {display:flex;flex-direction:row; align-items: center}
+		
+		  #searchNav {
+			width: 96%;
+		}
+    }
 </style>
+
 <script>
 function showSection(id){
  let sections=document.getElementsByTagName('section');
@@ -72,7 +164,7 @@ function filterNavigation(){
 <div id="sidebar">
  <h2>Help Menu</h2>
  <input type="text" id="searchNav" placeholder="Find by title" onkeyup="filterNavigation()">
- <a href="#" onclick="showSection('overview')">Overview</a>
+ <a href="#" onclick="showSection('overview')">TPS Overview</a>
  <a href="#" onclick="showSection('updateEmployee')">Employee Profile</a>
  <a href="#" onclick="showSection('addTimesheet')">Enter Timesheet</a>
  <a href="#" onclick="showSection('approveTimesheet')">Approve Timesheet</a>
@@ -80,8 +172,6 @@ function filterNavigation(){
  <a href="#" onclick="showSection('faq')">FAQ</a>
 </div>
 <div id="content">
-
-<!-- FULL CONTENT FROM USER BELOW -->
 
 <section id='overview' class='active'>
  <div class="title-section">
@@ -117,7 +207,7 @@ function filterNavigation(){
  <li>Select "Employees" from TPS main dashboard</li>
  <li>Search for the employee.</li>
  <li>Select "My Profile".</li>
- <li>Update fields (Job Mobile Number, Contact Email, Address, Payment Mode).</li>
+ <li>Update fields (Job Mobile Number, Contact Email, Address, Payment Mode, etc.).</li>
  <li>Changes are saved automatically when entered.</li>
 </ol>
 <img src='https://www.zoho.com/payroll/help/us/employee-portal/my-profile/profile-details.png' alt='Employee profile screen showing personal details, contact information, and masked sensitive fields'>
